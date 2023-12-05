@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Create note
+{% endblock %}
+
+{% block content %}
+<div class='container'>
+	<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal text-body-emphasis">Создание заметки</h1>
+    </div>
+    <form method="post">
+        <input type="text" name="title" id="title" class="form-control" placeholder="Введите название"><br>
+        <textarea name="text" id="text" class="form-control" placeholder="Введите основной текст"></textarea><br>
+        <input type="submit" class="btn btn-success" value="Отправить">
+    </form>
+</div>
+{% endblock %}

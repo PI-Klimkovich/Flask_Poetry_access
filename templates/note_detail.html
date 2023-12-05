@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ note.title }}
+{% endblock %}
+
+{% block content %}
+<div class='container'>
+	<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal text-body-emphasis">{{ note.title }}</h1>
+    </div>
+
+    <div class="alert alert-info">
+        <p>{{ note.text }}</p>
+        <p><b>Дата: {{ note.created_at.date() }}</b></p>
+        <a href="/notes/{{ note.uuid }}/delete" class="btn btn-danger">Удалить</a>
+        <a href="/notes/{{ note.uuid }}/update" class="btn btn-success">Редактировать</a>
+    </div>
+
+</div>
+{% endblock %}
