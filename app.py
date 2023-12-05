@@ -30,7 +30,8 @@ class Note(db.Model):
 @app.route('/')
 @app.route('/home')
 def index():
-    return render_template('index.html')
+    notes = Note.query.order_by(Note.created_at.desc()).all()
+    return render_template('index.html', notes=notes)
 
 
 @app.route('/about')
